@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useForm } from "react-hook-form";
+import GoogleLogin from "../components/GoogleLogin";
 
 const Login = () => {
-  const login = useAuth();
+  const { login } = useAuth();
   const {
     register,
     handleSubmit,
@@ -11,8 +12,11 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
-    console.log(data);
+    login(data.email, data.password);
+    navigate("/");
   };
   return (
     <div>
@@ -69,6 +73,9 @@ const Login = () => {
               <button type="submit" className="btn bg-gray-700 text-white">
                 Login
               </button>
+              <div>
+                <GoogleLogin></GoogleLogin>
+              </div>
             </div>
             <p className="text-sm">
               New Here?
