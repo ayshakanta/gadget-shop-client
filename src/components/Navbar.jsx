@@ -1,7 +1,9 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-emerald-200">
+      <div className="navbar bg-slate-200">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,51 +27,46 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <NavLink to="/products">Products</NavLink>
               </li>
               <li>
-                <a>Item 3</a>
+                <NavLink to="/about">About Us</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contactUs">Contact Us</NavLink>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <h1 className="btn btn-ghost text-xl">Gadget Shop</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <NavLink to="/products">Products</NavLink>
             </li>
             <li>
-              <a>Item 3</a>
+              <NavLink to="/about">About Us</NavLink>
+            </li>
+            <li>
+              <NavLink to="/contactUs">Contact Us</NavLink>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <div className="flex gap-2 items-center">
+            <button className="btn bg-gray-400 text-black rounded-md border border-black">
+              Sign In
+            </button>
+            <button className="btn bg-black text-white rounded-md border border-black">
+              Sign Up
+            </button>
+          </div>
         </div>
       </div>
     </div>
