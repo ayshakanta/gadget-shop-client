@@ -26,7 +26,7 @@ const UserDropdown = () => {
           className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
         >
           <li>
-            <Link>Dashboard</Link>
+            <Link to="/dashboard/overview">Dashboard</Link>
           </li>
           <li>
             <button onClick={handleLogout} className="btn btn-sm">
